@@ -1,0 +1,20 @@
+<h2>Create a new post</h2>
+
+<%= form_with model: @post do |form| %>
+
+    <% @post.errors.each do |error| %>
+        <p><%= error.full_message %></p>
+    <% end %>
+
+    <div>
+        <%= form.label :title, "Title" %>
+        <%= form.text_field :title, required: true, minlength: 4, maxlength: 25 %>
+    </div>
+
+    <div>
+        <%= form.label :body, "Body" %>
+        <%= form.text_area :body, required: true, maxlength: 500 %>
+    </div>
+
+    <%= form.submit %>
+<% end %>
