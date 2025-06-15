@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :authenticate_user!, only: [:new, :create]
+    before_action :authenticate_user!, only: [ :new, :create ]
 
     def new
         @post = Post.new
@@ -21,6 +21,6 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.expect(post: [:title, :body])
+        params.expect(post: [ :title, :body ])
     end
 end
