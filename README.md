@@ -1,24 +1,25 @@
-# README
+# Members Only project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an implementation of the members only project from the Odin Project Ruby on Rails path. It implements a simple authentication sysmtem using `devise` gem to realize the authentication, and allows users to create or view posts.
 
-Things you may want to cover:
+As a non-user, you may:
 
-* Ruby version
+- View posts' title and body
+- Login
 
-* System dependencies
+As a user, you may;
 
-* Configuration
+- Posts' owners
+- Create posts
 
-* Database creation
+# Technical stack
 
-* Database initialization
+For this project, I used the following stack:
 
-* How to run the test suite
+- Ruby on Rails `8.0.2v`
+- HTML ERB
+- `devise` gem
 
-* Services (job queues, cache servers, search engines, etc.)
+In order to run the server, simply clone the repo and run the command `rails server`.
 
-* Deployment instructions
-
-* ...
+If you face any issues with database, migrate it using `rails db:migrate`
