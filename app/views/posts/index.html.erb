@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+    <h2>You are signed in as <%= current_user.email %>, <%= button_to "Sign out", destroy_user_session_path, method: :delete %></h2>
+<% else %>
+    <h2><%= link_to "Sign in", new_user_session_path %> to view post owners</h2>
+<% end %>
+
+<% @posts.each do |post| %>
+        <p>
+            <strong style="font-size: 1.2em;"><%= post.title %> </strong><em>created <%= time_ago_in_words(post.created_at) %> ago</em>
+            <% if user_signed_in? %>
+                <em>by <%= User.find_by_id(post.user_id).email %></em>
+            <% end %>
+        </p>
+        <p><%= post.body %></p>
+        <hr>
+<% end %>
+
+<%= button_to "Create new post", new_post_path, method: :get %>
