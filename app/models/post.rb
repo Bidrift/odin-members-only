@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :users
+  belongs_to :user
 
   validates :title, :body, presence: true
   validates :title, uniqueness: true, length: { in: 4..25}
